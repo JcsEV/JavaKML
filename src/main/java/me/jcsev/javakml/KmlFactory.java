@@ -10,6 +10,9 @@ import org.dom4j.io.XMLWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public class KmlFactory {
@@ -33,7 +36,7 @@ public class KmlFactory {
 	}
 	
 	public void writeKML (String name) throws IOException {
-		OutputStream output = new FileOutputStream(name);
+		OutputStream output = Files.newOutputStream(Paths.get(name));
 		OutputFormat format = OutputFormat.createPrettyPrint();
 		format.setEncoding("utf-8");
 		XMLWriter xmlWriter = new XMLWriter(output, format);
