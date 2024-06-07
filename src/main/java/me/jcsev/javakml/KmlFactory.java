@@ -95,6 +95,7 @@ public class KmlFactory {
 	public static Element createPlacemark (Element e, String name, String description, String style) {
 		Element placemark = addElement(e, "Placemark");
 		addElement(placemark, "name", name);
+		addElement(placemark, "visibility", "0");
 		addElement(placemark, "description", description);
 		addStyleUrl(placemark, style);
 		return placemark;
